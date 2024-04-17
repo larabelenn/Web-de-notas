@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Reto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>Web de notas</h1>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <section>
+                <h2>Crear Nota</h2>
+                <input type="text" id="titulo" placeholder="Título">
+                <textarea id="descripcion" placeholder="Descripción"></textarea>
+                <select id="categoria">
+                    <option value="">Sin Categoría</option>
+                    <option value="personal">Personal</option>
+                    <option value="trabajo">Trabajo</option>
+                    <option value="estudio">Estudio</option>
+                </select>                
+                <button onclick="crearNota()">Crear Nota</button>
+            </section>
+            <section>
+                <h2>Filtrar por Categoría</h2>
+                <select id="filtroCategoria" onchange="filtrarNotas()">
+                    <option value="todas">Todas</option>
+                    <option value="personal">Personal</option>
+                    <option value="trabajo">Trabajo</option>
+                    <option value="estudio">Estudio</option>
+                    <option value="sin-categoria">Sin Categoría</option>
+                </select>                
+            </section>
+            <section>
+                <h2>Notas Archivadas</h2>
+                <button id="toggleArchivadas" onclick="toggleArchivadas()">Mostrar Archivadas</button>
+                <div id="notasArchivadas" style="display:none;"></div>
+            </section>
+        </aside>
+        <section class="main-content">
+            <h2>Notas Activas</h2>
+            <div id="notasActivas"></div>
+        </section>
+    </main>
+
+    <header>
+        <h1>Hecho por: Lara Belen Barrios Bittola</h1>
+        <a href="https://github.com/larabelenn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+        </a>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
